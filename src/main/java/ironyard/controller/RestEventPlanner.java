@@ -90,9 +90,9 @@ public class RestEventPlanner {
      * @param exception exception found
      * @return error message
      */
-    @ExceptionHandler(value = Throwable.class)
-    public String nfeHandler(Throwable exception) {
-        log.error("Error on Event Planner", exception);
-        return "There was an error :/";
-    }
+//    @ExceptionHandler(value = Throwable.class)
+//    public String nfeHandler(Throwable exception) {
+//        log.error("Error on Event Planner", exception);
+//        return "There was an error :/";
+//    }
 }
