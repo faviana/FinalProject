@@ -80,11 +80,7 @@ public class Application {
     private ApiInfo apiInfoEventPlanner(){
         return new ApiInfoBuilder()
                 .title("This is my API")
-                .description("Do all your event planning here!\n" +
-                        "        <br>\n" +
-                        "        Before starting copy the authorization Key\n" +
-                        "        <p/>\n" +
-                        "        M6+4hTmtBqTBNRqGSEM7JtfDlSU/qh8Z\n")
+                .description("Do all your event planning here!")
                 .termsOfServiceUrl("http://theironyard.com")
                 .contact("Faviana Lopez")
                 .license("Apache License Version 2.0")
@@ -96,11 +92,7 @@ public class Application {
     private ApiInfo apiInfoNewEvent() {
         return new ApiInfoBuilder()
                 .title("This is my API")
-                .description("Do all your event planning here!\n" +
-                        "        <br>\n" +
-                        "        Before starting copy the authorization Key\n" +
-                        "        <p/>\n" +
-                        "        M6+4hTmtBqTBNRqGSEM7JtfDlSU/qh8Z\n")
+                .description("Do all your event planning here!")
                 .termsOfServiceUrl("http://theironyard.com")
                 .contact("Faviana Lopez")
                 .license("Apache License Version 2.0")
