@@ -51,15 +51,11 @@
 
 <body>
 
-<center>
-    <span class="message"><font color="#f08080", face="cursive"> Event Planner: ${eventPlanner.displayName}</font></span>
-</center>
-
 <div class="container">
     <div class="header clearfix">
         <nav>
             <ul class="nav nav-pills pull-right">
-                <li role="presentation" class="active">
+                <li role="presentation">
                     <a style="color:lightskyblue;" href="/createNewEventPlanner.jsp">
                         Create Your Account
                     </a>
