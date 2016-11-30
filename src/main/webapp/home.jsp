@@ -51,22 +51,22 @@
 
 <body>
 
-
+<center>
+    <span class="message"><font color="#f08080", face="cursive"> Event Planner: ${eventPlanner.displayName}</font></span>
+</center>
 
 <div class="container">
     <div class="header clearfix">
         <nav>
             <ul class="nav nav-pills pull-right">
                 <li role="presentation"><a style="color:lightsalmon;" href="/introduction.jsp">Introduction</a></li>
-                <li role="presentation" class="active"><a style="color:lightskyblue;" href="/home.jsp">New Event</a></li>
+                <li role="presentation"><a style="color:lightskyblue;" href="/home.jsp">New Event</a></li>
                 <li role="presentation"><a style="color:lightsalmon;"href="/event/ListAll">Events</a></li>
                 <li role="presentation"><a style="color:lightsalmon;" href="/event/logout">Logout</a></li>
             </ul>
         </nav>
         <h2 style="color:coral;"class="text-muted"><font face="cursive">Event Planning With Favi</font></h2>
     </div>
-
-
 
     <div class="row marketing">
         <div class="col-lg-6">

@@ -52,7 +52,7 @@
 <body>
 
 <center>
-    <span class="message">Event Planner: ${eventPlanner.displayName}</span>
+    <span class="message"><font color="#f08080", face="cursive"> Event Planner: ${eventPlanner.displayName}</font></span>
 </center>
 
 <div class="container">

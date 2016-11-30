@@ -51,7 +51,7 @@
 <body>
 
 <center>
-    <span class="message">Welcome ${eventPlanner.displayName}</span>
+    <span class="message"><font color="#f08080", face="cursive"> Welcome ${eventPlanner.displayName}</font></span>
 </center>
 
 

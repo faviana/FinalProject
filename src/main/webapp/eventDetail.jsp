@@ -52,7 +52,7 @@
 <body>
 
 <center>
-    <span class="message">Event Planner: ${eventPlanner.displayName}</span>
+    <span class="message"><font color="#f08080", face="cursive"> Event Planner: ${eventPlanner.displayName}</font></span>
 </center>
 
 <div class="container">
@@ -61,7 +61,7 @@
             <ul class="nav nav-pills pull-right">
                 <li role="presentation"><a style="color:lightsalmon;" href="/introduction.jsp">Introduction</a></li>
                 <li role="presentation"><a style="color:lightsalmon;" href="/home.jsp">New Event</a></li>
-                <li role="presentation" class="active"><a style="color:lightskyblue;" href="/event/ListAll">Events</a></li>
+                <li role="presentation"><a style="color:lightskyblue;" href="/event/ListAll">Events</a></li>
                 <li role="presentation"><a style="color:lightsalmon;" href="/event/logout">Logout</a></li>
             </ul>
         </nav>
