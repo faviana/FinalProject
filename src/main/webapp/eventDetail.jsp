@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: favianalopez
-  Date: 11/9/16
-  Time: 3:09 PM
+  Date: 11/21/16
+  Time: 11:21 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -70,56 +70,50 @@
 
     <div class="row marketing">
         <div class="col-lg-6">
-            <h4 style="color:lightskyblue;"><font face="cursive">Here are all your events:</font></h4>
+            <h4 style="color:lightskyblue;"><font face="cursive">Details:</font></h4>
 
             <p/>
 
-            <table class="table">
-                <thead>
+            <form method="post" action="/event/detailOption">
+
+            <div style="float: left; width: 25%;">
                 <tr>
-                    <th>Options</th>
-                    <th>Name of Event</th>
-                    <th>Budget</th>
-                    <th>Number of Guests</th>
-                    <th>Date of Event</th>
-                    <th>Time of Event</th>
-                    <th>Location</th>
+                    <td>FOOD</td>
 
+                    <td><textarea name="food" cols="20" rows="5"><c:out value="${detail.food}"/></textarea></td>
                 </tr>
-                </thead>
-                <tbody>
+            </div>
 
-                <c:forEach items="${events}" var="anEvent">
+                <div style="float: left; width: 25%;">
                     <tr>
-                        <td>
-                            <a style="color:lightsalmon;" href="/event/select?id=<c:out value="${anEvent.id}"/>">
-                                Edit
-                            </a>
-                            <br>
-                            <a style="'color:lightsalmon;" href="/event/selectOption?id=<c:out value="${anEvent.id}"/>">
-                                Details
-                            </a>
-                            <br>
-                            <a style="color:lightsalmon;" href="/event/delete?id=<c:out value="${anEvent.id}"/>">
-                                Delete
-                            </a>
-                        </td>
-
-                        <td><c:out value="${anEvent.nameOfEvent}"/></td>
-                        <td><c:out value="${anEvent.budget}"/></td>
-                        <td><c:out value="${anEvent.numberOfGuests}"/></td>
-                        <td><c:out value="${anEvent.dateOfEvent}"/></td>
-                        <td><c:out value="${anEvent.timeOfEvent}"/></td>
-                        <td><c:out value="${anEvent.location}"/></td>
-
+                        <td>DECORATION</td>
+                        <td><textarea name="decorations" cols="20" rows="5"><c:out value="${detail.decorations}"/></textarea></td>
                     </tr>
+                </div>
 
-                </c:forEach>
+                <div style="float: left; width: 25%;">
+                    <tr>
+                        <td>DRINK</td>
+                        <td><textarea name="drinks" cols="20" rows="5"><c:out value="${detail.drinks}"/></textarea></td>
+                    </tr>
+                </div>
 
-            </table>
+                <div style="float: left; width: 25%;">
+                    <tr>
+                        <td>DESSERT</td>
+                        <td><textarea name="desserts" cols="20" rows="5"><c:out value="${detail.desserts}"/></textarea></td>
+                    </tr>
+                </div>
 
+                <br/>
+
+                <input type="submit" name ="Save"/>
+                <input type="hidden" name="id" value="<c:out value="${detail.id}"/>"/>
+
+
+            </form>
+            </div>
         </div>
-
     </div>
 
     <p/>
@@ -131,8 +125,6 @@
 </div> <!-- /container -->
 
 <p/>
-
-
 
 </body>
 </html>

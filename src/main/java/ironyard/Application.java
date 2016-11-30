@@ -21,19 +21,42 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @SpringBootApplication
 public class Application {
 
+    /**
+     * main class
+     * @param args
+     */
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class);
     }
 
+    /**
+     * event planner api
+     * @return docket to swagger
+     */
+
     @Bean
     public Docket eventPlannerApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("event-api")
-                .apiInfo(apiInfoNewEvent())
+                .groupName("eventPlanner-api")
+                .apiInfo(apiInfoEventPlanner())
                 .select()
-                .paths(regex("/planning/eventPlanner.*"))
-                .build();
+                .paths(regex("/rest/planner.*"))
+                .build()
+                .globalOperationParameters(
+                newArrayList(new ParameterBuilder()
+                        .name("x-authorization-key")
+                        .description("API Authorization Key")
+                        .modelRef(new ModelRef("string"))
+                        .parameterType("header")
+                        .required(true)
+                        .build()));
     }
+
+    /**
+     * new event api
+     * @return docket ot swagger
+     */
 
     @Bean
     public Docket newEventApi() {
@@ -41,7 +64,7 @@ public class Application {
                 .groupName("newEvent-api")
                 .apiInfo(apiInfoNewEvent())
                 .select()
-                .paths(regex("/planning/newEvent.*"))
+                .paths(regex("/rest/event.*"))
                 .build()
                 .globalOperationParameters(
                         newArrayList(new ParameterBuilder()
@@ -53,10 +76,15 @@ public class Application {
                                 .build()));
     }
 
+
     private ApiInfo apiInfoEventPlanner(){
         return new ApiInfoBuilder()
-                .title("This is our API")
-                .description("Do all your planning here!!!")
+                .title("This is my API")
+                .description("Do all your event planning here!\n" +
+                        "        <br>\n" +
+                        "        Before starting copy the authorization Key\n" +
+                        "        <p/>\n" +
+                        "        M6+4hTmtBqTBNRqGSEM7JtfDlSU/qh8Z\n")
                 .termsOfServiceUrl("http://theironyard.com")
                 .contact("Faviana Lopez")
                 .license("Apache License Version 2.0")
@@ -67,8 +95,12 @@ public class Application {
 
     private ApiInfo apiInfoNewEvent() {
         return new ApiInfoBuilder()
-                .title("This is our API")
-                .description("Do all your planning here!!!")
+                .title("This is my API")
+                .description("Do all your event planning here!\n" +
+                        "        <br>\n" +
+                        "        Before starting copy the authorization Key\n" +
+                        "        <p/>\n" +
+                        "        M6+4hTmtBqTBNRqGSEM7JtfDlSU/qh8Z\n")
                 .termsOfServiceUrl("http://theironyard.com")
                 .contact("Faviana Lopez")
                 .license("Apache License Version 2.0")

@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: favianalopez
-  Date: 11/9/16
-  Time: 3:09 PM
+  Date: 11/26/16
+  Time: 1:02 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -51,88 +51,62 @@
 
 <body>
 
-<center>
-    <span class="message">Event Planner: ${eventPlanner.displayName}</span>
-</center>
 
 <div class="container">
     <div class="header clearfix">
         <nav>
             <ul class="nav nav-pills pull-right">
-                <li role="presentation"><a style="color:lightsalmon;" href="/introduction.jsp">Introduction</a></li>
-                <li role="presentation"><a style="color:lightsalmon;" href="/home.jsp">New Event</a></li>
-                <li role="presentation" class="active"><a style="color:lightskyblue;" href="/event/ListAll">Events</a></li>
-                <li role="presentation"><a style="color:lightsalmon;" href="/event/logout">Logout</a></li>
+                <li role="presentation" class="active">
+                    <a style="color:lightskyblue;" href="/createNewEventPlanner.jsp">
+                        Create Your Account
+                    </a>
+                </li>
+
+                <li role="presentation">
+                    <a style="color:lightsalmon;" href="/login.jsp">
+                        Go Back To Login Page
+                    </a>
+                </li>
+
             </ul>
         </nav>
-        <h2 style="color:coral;"class="text-muted"><font face="cursive">Event Planning With Favi</font></h2>
+        <h3 class="text-muted">Create Your Account</h3>
     </div>
+
+
 
     <div class="row marketing">
         <div class="col-lg-6">
-            <h4 style="color:lightskyblue;"><font face="cursive">Here are all your events:</font></h4>
+            <h4>Create Account</h4>
+            <c:if test="${error_message != null}">
+                <div class="alert alert-danger"><c:out value="${error_message}"/></div>
+            </c:if>
+
+            <form method="post" action="/event/newEventPlanner">
+                <table class="table">
+                    <tr><td>Display Name:</td><td><input type="text" name="displayName" value="<c:out value="${displayName}"/>"></td></tr>
+                    <tr><td>User Name:</td><td><input type="text" name="username" value="<c:out value="${username}"/>"></td></tr>
+                    <tr><td>Password:</td><td><input type="password" name="password"></td></tr>
+                    <tr><td>Password (Repeat):</td><td><input type="password" name="password2"></td></tr>
+                </table>
+                <div>
+                    <input type="submit" name="Save"/>
+                </div>
+            </form>
+            <p></p>
 
             <p/>
-
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Options</th>
-                    <th>Name of Event</th>
-                    <th>Budget</th>
-                    <th>Number of Guests</th>
-                    <th>Date of Event</th>
-                    <th>Time of Event</th>
-                    <th>Location</th>
-
-                </tr>
-                </thead>
-                <tbody>
-
-                <c:forEach items="${events}" var="anEvent">
-                    <tr>
-                        <td>
-                            <a style="color:lightsalmon;" href="/event/select?id=<c:out value="${anEvent.id}"/>">
-                                Edit
-                            </a>
-                            <br>
-                            <a style="'color:lightsalmon;" href="/event/selectOption?id=<c:out value="${anEvent.id}"/>">
-                                Details
-                            </a>
-                            <br>
-                            <a style="color:lightsalmon;" href="/event/delete?id=<c:out value="${anEvent.id}"/>">
-                                Delete
-                            </a>
-                        </td>
-
-                        <td><c:out value="${anEvent.nameOfEvent}"/></td>
-                        <td><c:out value="${anEvent.budget}"/></td>
-                        <td><c:out value="${anEvent.numberOfGuests}"/></td>
-                        <td><c:out value="${anEvent.dateOfEvent}"/></td>
-                        <td><c:out value="${anEvent.timeOfEvent}"/></td>
-                        <td><c:out value="${anEvent.location}"/></td>
-
-                    </tr>
-
-                </c:forEach>
-
-            </table>
 
         </div>
 
     </div>
 
-    <p/>
-
     <footer class="footer">
         <p>&copy; 2016 5E, Inc.</p>
     </footer>
 
-</div> <!-- /container -->
-
-<p/>
-
-
+</div>
 
 </body>
 </html>
+

@@ -52,56 +52,63 @@
 <body>
 
 
+
 <div class="container">
     <div class="header clearfix">
         <nav>
             <ul class="nav nav-pills pull-right">
-                <li role="presentation"><a href="/introduction.jsp">Introduction</a></li>
-                <li role="presentation" class="active"><a href="/home.jsp">New Event</a></li>
-                <li role="presentation"><a href="/event/ListAll">Events</a></li>
+                <li role="presentation"><a style="color:lightsalmon;" href="/introduction.jsp">Introduction</a></li>
+                <li role="presentation" class="active"><a style="color:lightskyblue;" href="/home.jsp">New Event</a></li>
+                <li role="presentation"><a style="color:lightsalmon;"href="/event/ListAll">Events</a></li>
+                <li role="presentation"><a style="color:lightsalmon;" href="/event/logout">Logout</a></li>
             </ul>
         </nav>
-        <h3 class="text-muted">Event Planning With Favi</h3>
+        <h2 style="color:coral;"class="text-muted"><font face="cursive">Event Planning With Favi</font></h2>
     </div>
 
 
 
     <div class="row marketing">
         <div class="col-lg-6">
-            <h4>Create a new event:</h4>
+            <h4 style="color:lightskyblue;"><font face="cursive">Create a new event:</font></h4>
 
-            <p/>
+
+            <form method="post" action="/event/create">
 
             <table class="table">
                 <thead>
-                <tr>
-                    <th>Name of Event</th>
-                    <th>Budget</th>
-                    <th>Number of Guests</th>
-                    <th>Date of Event</th>
-                    <th>Time of Event</th>
-                    <th>Location</th>
-                </tr>
-                </thead>
-                <tbody>
 
-                <c:forEach items="${events}" var="anEvent">
-                    <tr>
-                        <td><c:out value="${anEvent.nameofEvent}"/></td>
-                        <td><c:out value="${anEvent.budget}"/></td>
-                        <td><c:out value="${anEvent.numberOfGuests}"/></td>
-                        <td><c:out value="${anEvent.dateOfEvent}"/></td>
-                        <td><c:out value="${anEvent.timeOfEvent}"/></td>
-                        <td><c:out value="${anEvent.location}"/></td>
-                    </tr>
-                </c:forEach>
-                </tbody>
+                <tr><td>Name of Event:</td><td><input type="text" name="nameOfEvent" value="<c:out value="${nameOfEvent}"/>"></td></tr>
+                <tr><td>Budget:</td><td><input type="text" name="budget" value="<c:out value="${budget}"/>"></td></tr>
+                <tr><td>Number of Guests:</td><td><input type="text" name="numberOfGuests" value="<c:out value="${numberOfGuests}"/>"></td></tr>
+                <tr><td>Date of Event:</td><td><input type="text" name="dateOfEvent" value="<c:out value="${dateOfEvent}"/>"></td></tr>
+                <tr><td>Time of Event:</td><td><input type="text" name="timeOfEvent" value="<c:out value="${tiemOfEvent}"/>"></td></tr>
+                <tr><td>Location:</td><td><input type="text" name="location" value="<c:out value="${location}"/>"></td></tr>
 
             </table>
+
+                <div>
+                    <input type="submit" name="Save"/>
+                </div>
+
+                <div>
+                    <font face="cursive">
+                        <center>
+                            <br>
+                            Once you create your event click on "details" link to add and see more fun things about your event
+
+                        </center>
+                    </font>
+                    <br>
+
+                </div>
+
+           </form>
 
         </div>
 
     </div>
+    <p/>
 
     <footer class="footer">
         <p>&copy; 2016 5E, Inc.</p>

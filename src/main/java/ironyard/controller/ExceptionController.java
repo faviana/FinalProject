@@ -15,13 +15,24 @@ import java.sql.SQLException;
  */
 public class ExceptionController {
 
+    /**
+     * handle throwable exception
+     * @param exception base exception
+     * @return return exception message
+     */
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(value = Throwable.class)
-    public String handleBaseException(Throwable e){
-        return e.getMessage();
+    public String handleBaseException(Throwable exception){
+        return exception.getMessage();
     }
 
+    /**
+     * handle sqlexception
+     * @param exception sql exception
+     * @return return exception message
+     */
     @ExceptionHandler(value = SQLException.class)
-    public String handleSQLException(Exception e){return e.getMessage();}
+    public String handleSQLException(Exception exception){
+        return exception.getMessage();}
 
 }
