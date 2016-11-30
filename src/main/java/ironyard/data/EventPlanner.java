@@ -12,7 +12,7 @@ public class EventPlanner {
     private String password;
     private String displayName;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<NewEvent> events;
 
     @Id
